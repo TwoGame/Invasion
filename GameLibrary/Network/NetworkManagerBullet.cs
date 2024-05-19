@@ -1,0 +1,31 @@
+﻿using Course_projectWPF.Network;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GameLibrary.Network
+{
+    public class NetworkManagerBullet : NetworkManager<BulletNetworkData>
+    {
+        public NetworkManagerBullet(INetworkHandler networkHandler) : base(networkHandler)
+        {
+        }
+
+        public override void Start()
+        {
+
+        }
+
+        public override void Update()
+        {
+            UpdateData();
+        }
+
+        protected override void ClearData()
+        {
+            CurrentNetworkData.IsShoot = false;
+        }
+    }
+}
